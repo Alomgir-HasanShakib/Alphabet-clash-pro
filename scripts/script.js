@@ -2,6 +2,12 @@ function handleKeyPress(event) {
   // capture the player pressed key
 
   const playerPressed = event.key;
+console.log(playerPressed);
+  // stop the game if pressed escape
+
+  if (playerPressed === "Escape") {
+    gameOver();
+  }
 
   //  contain expected alphabets
 
@@ -49,13 +55,13 @@ function continueGame() {
 }
 
 function play() {
-  // hide everything without playgoround 
-  
+  // hide everything without playgoround
+
   hideElementsById("home-section");
   hideElementsById("scores-section");
   showElementById("playground-section");
 
-  // reset scores and life 
+  // reset scores and life
   setTextValueById("life", 5);
   setTextValueById("live-scores", 0);
 
@@ -64,4 +70,12 @@ function play() {
 function gameOver() {
   hideElementsById("playground-section");
   showElementById("scores-section");
+
+  // update final scores
+
+  const finalScores = getTextValueById("live-scores");
+  setTextValueById("final-scores", finalScores);
+  // clear old selecting keyborad color for new selection
+  const currentAlphabet = getElementTextById("current-alphabet");
+  removeBgColorById(currentAlphabet);
 }

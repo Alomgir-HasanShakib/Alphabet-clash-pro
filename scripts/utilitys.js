@@ -28,6 +28,12 @@ function setTextValueById(elementId, value) {
   element.innerText = value;
 }
 
+function getElementTextById(elementId){
+  const element = document.getElementById(elementId)
+  const text = element.innerText
+  return text
+}
+
 function getARandomAlphabet() {
   // step1: get or create a random alphabet
   const alphabetString = "abcdefghijklmnopqrstuvwxyz";
