@@ -12,6 +12,21 @@ function setBgColorById(elementId) {
   element.classList.add("bg-orange-400");
   return element;
 }
+function removeBgColorById(elementId) {
+  const element = document.getElementById(elementId);
+  element.classList.remove("bg-orange-400");
+}
+
+function getTextValueById(elementId) {
+  const element = document.getElementById(elementId);
+  const elementTextValue = element.innerText;
+  const value = parseInt(elementTextValue);
+  return value;
+}
+function setTextValueById(elementId, value) {
+  const element = document.getElementById(elementId);
+  element.innerText = value;
+}
 
 function getARandomAlphabet() {
   // step1: get or create a random alphabet
